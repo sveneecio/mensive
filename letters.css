@@ -1,0 +1,198 @@
+/* Import font tulisan tangan */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Kalam', cursive, sans-serif;
+    background-color: #F9F7F3; /* Warna latar belakang krem lembut */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.book-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.book {
+    width: 90vw;
+    max-width: 1000px;
+    height: 600px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Garis tengah buku */
+.book::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background-color: #e0e0e0;
+}
+
+.page {
+    flex: 1;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Halaman Kiri */
+.left-page .page-content {
+    justify-content: space-between;
+}
+
+.top-section, .bottom-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-section {
+    align-items: flex-start;
+}
+
+.bottom-section {
+    align-items: flex-end;
+}
+
+.handwritten-text {
+    color: #3D3D3D;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.text1 {
+    max-width: 200px;
+}
+
+.text2 {
+    max-width: 220px;
+    text-align: right;
+}
+
+.text2 span {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Halaman Kanan */
+.right-page .page-content {
+    justify-content: center;
+    align-items: center;
+}
+
+.text3 {
+    max-width: 80%;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Gaya Polaroid */
+.polaroid-frame {
+    background-color: #FBEAE4; /* Warna frame pink lembut */
+    padding: 12px 12px 30px 12px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    width: 180px;
+}
+
+.polaroid-frame img {
+    width: 100%;
+    display: block;
+}
+
+/* Rotasi untuk efek dinamis */
+.p1 {
+    transform: rotate(-4deg);
+}
+
+.p2 {
+    transform: rotate(5deg);
+}
+
+/* Tombol Panah */
+.arrow {
+    cursor: pointer;
+    color: #F58426;
+    transition: transform 0.2s ease-in-out;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+/* Desain Responsif untuk Layar Kecil */
+@media (max-width: 900px) {
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
+    
+    .book-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .book {
+        flex-direction: column;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .book::before {
+        display: none; /* Sembunyikan garis tengah pada mode mobile */
+    }
+
+    .page {
+        padding: 20px;
+    }
+
+    .top-section, .bottom-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .bottom-section {
+        flex-direction: column-reverse; /* Tukar posisi gambar dan teks */
+    }
+
+    .text1, .text2 {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .text3 {
+        max-width: 100%;
+    }
+    
+    .polaroid-frame {
+        width: 80%;
+        max-width: 250px;
+    }
+    
+    .arrow {
+        transform: rotate(90deg);
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player - HIVI!</title>
+    <!-- Import Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="music-player.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Love rain animation container (dibiarkan berfungsi seperti semula) -->
+        <div class="love-rain" id="loveRain" style="display: none;">
+            <!-- ... partikel cinta tetap di sini ... -->
+        </div>
+        
+        <!-- Navigasi ke halaman surat -->
+        <a href="letters.html" class="nav-arrow right-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline></svg>
+        </a>
+        
+        <!-- Kartu Pemutar Musik Utama -->
+        <div class="music-card">
+            <div class="album-art">
+                <img src="ab67616d0000b273f40f1fd475781949fc5d36b8.jpeg" alt="Album Art HIVI! - Satu-Satunya">
+            </div>
+
+            
+            <!-- Informasi Lagu -->
+            <div class="song-info">
+                <h2 class="song-title">Satu-Satunya</h2>
+                <p class="artist-name">HIVI!</p>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-handle" id="progressHandle"></div>
+                </div>
+                <div class="time-display">
+                    <span class="current-time" id="currentTime">0:00</span>
+                    <span class="total-time" id="totalTime">0:00</span>
+                </div>
+            </div>
+            
+            <!-- Kontrol Musik -->
+            <div class="music-controls">
+                <button class="control-btn" id="skipBackBtn" title="Back">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 19 2 12 11 5 11 19"></polygon><polygon points="22 19 13 12 22 5 22 19"></polygon></svg>
+                </button>
+                <button class="control-btn play-btn" id="playBtn" title="Play/Pause">
+                    <span id="playIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </span>
+                </button>
+                <button class="control-btn" id="skipForwardBtn" title="Forward">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Audio element -->
+        <audio id="audioPlayer" preload="metadata">
+            <source src="ytapi.space - HIVI - Satu-Satunya.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <script src="music-player.js"></script>
+</body>
+</html>
